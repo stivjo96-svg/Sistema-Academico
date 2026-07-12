@@ -215,46 +215,45 @@ Actividad reciente
 </div>
 
 
-
 <div class="col-md-4">
 
-<div class="card shadow">
+    <div class="card shadow">
 
-<div class="card-header text-white"
+        <div class="card-header text-white"
+            style="background:#052C73;">
 
-style="background:#052C73;">
+            Información del usuario
 
-Información del usuario
+        </div>
+
+        <div class="card-body text-center">
+
+            <img src="uploads/fotos/<?php echo $_SESSION['user_foto']; ?>"
+                class="rounded-circle shadow"
+                width="120"
+                height="120"
+                style="object-fit:cover;border:3px solid #16B5C4;">
+
+            <h5 class="mt-3">
+                <?php echo $_SESSION['user_apenom']; ?>
+            </h5>
+
+            <p class="text-muted">
+                <?php echo $_SESSION['user_rol']; ?>
+            </p>
+
+            <hr>
+
+            <p>
+                <b>Roles asignados:</b><br>
+                <?php echo $roles; ?>
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
-
-<div class="card-body">
-
-<p>
-
-<b>Rol actual:</b>
-
-<?php echo $rolactual; ?>
-
-</p>
-
-<p>
-
-<b>Roles asignados:</b>
-
-<?php echo $roles; ?>
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
 
 <div class="row mt-4">
 

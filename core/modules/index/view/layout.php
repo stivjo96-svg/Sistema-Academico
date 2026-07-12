@@ -167,14 +167,13 @@ Académica
 
 </ul>
 
-<ul class="navbar-nav ms-auto">
+<ul class="navbar-nav ms-auto align-items-center">
 
-<li class="nav-item">
+<?php if(isset($_SESSION['user_cedula'])){ ?>
 
-<span
+<li class="nav-item me-4">
 
-class="nav-link fw-semibold"
-
+<span class="fw-semibold"
 style="color:#16B5C4;">
 
 Organiza. Enseña. Aprende. Crece.
@@ -182,6 +181,120 @@ Organiza. Enseña. Aprende. Crece.
 </span>
 
 </li>
+
+<li class="nav-item dropdown">
+
+<a class="nav-link d-flex align-items-center"
+    href="#"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+
+<img
+src="uploads/fotos/<?php echo $_SESSION['user_foto']; ?>"
+class="rounded-circle shadow"
+style="width:45px;
+height:45px;
+object-fit:cover;
+border:2px solid #16B5C4;">
+
+<div class="ms-2 text-start">
+
+<div style="font-weight:600;color:#052C73;">
+
+<?php echo $_SESSION['user_apenom']; ?>
+
+</div>
+
+<small style="color:#16B5C4;">
+
+<?php echo $_SESSION['user_rol']; ?>
+
+</small>
+
+</div>
+
+<i class="bi bi-chevron-down ms-2 text-secondary"></i>
+
+</a>
+
+<ul class="dropdown-menu dropdown-menu-end shadow border-0 p-0" style="width:270px;">
+
+    <li>
+
+        <div class="text-center py-4"
+            style="background:#052C73;">
+
+            <img
+            src="uploads/fotos/<?php echo $_SESSION['user_foto']; ?>"
+            class="rounded-circle shadow"
+            style="width:90px;
+                    height:90px;
+                    object-fit:cover;
+                    border:3px solid #16B5C4;">
+
+            <h6 class="text-white mt-3 mb-1">
+
+                <?php echo $_SESSION['user_apenom']; ?>
+
+            </h6>
+
+            <small style="color:#16B5C4;">
+
+                <?php echo strtoupper($_SESSION['user_rol']); ?>
+
+            </small>
+
+        </div>
+
+    </li>
+
+    <li>
+
+        <a class="dropdown-item py-3"
+            href="./?view=perfil">
+
+            <i class="bi bi-person-circle me-2"></i>
+
+            Mi perfil
+
+        </a>
+
+    </li>
+
+    <li>
+
+        <a class="dropdown-item py-3"
+            href="#">
+
+            <i class="bi bi-key me-2"></i>
+
+            Cambiar contraseña
+
+        </a>
+
+    </li>
+
+    <li><hr class="dropdown-divider m-0"></li>
+
+    <li>
+
+        <a class="dropdown-item text-danger py-3"
+            href="./?view=logout">
+
+            <i class="bi bi-box-arrow-right me-2"></i>
+
+            Cerrar sesión
+
+        </a>
+
+    </li>
+
+</ul>
+
+</li>
+
+<?php } ?>
 
 </ul>
 
@@ -349,7 +462,22 @@ class="nav-link">
 
 </li>
 
+<li class="nav-item">
 
+    <a href="./?view=usuarios"
+        class="nav-link">
+
+        <i class="nav-icon bi bi-people-fill"></i>
+
+        <p>
+
+            Gestión de Usuarios
+
+        </p>
+
+    </a>
+
+</li>
 
 <li class="nav-item">
 
